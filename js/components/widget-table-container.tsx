@@ -1,45 +1,17 @@
-import * as React from 'react';
-import { Store } from 'redux';
-import { WidgetTable } from './widget-table';
-import { AppState } from '../app-state';
+import * as React from "react";
+import {connect} from "react-redux";
+import {bindActionCreators} from "redux";
 
-export interface WidgetTableContainerProps {
-	store: Store<AppState>
-}
+import {refreshWidgets} from "../actions/refresh-widgets";
+import {AppState} from "../app-state";
+import {WidgetTable} from "../components/widget-table";
 
-export interface WidgetTableContainerState {
-	widgets: any[]
-}
+const mapStateToProps = (state: AppState) => ({
+    widgets: state.widgets,
+});
 
-export class WidgetTableContainer extends React.Component<WidgetTableContainerProps, WidgetTableContainerState> {
+const mapDispatchToProps = dispatch =>
+    bindActionCreators({ refreshWidgets }, dispatch);
 
-	private unsubscribe: Function;
-
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			widgets: []
-		};
-	}
-
-	componentDidMount() {
-
-		this.unsubscribe = this.props.store.subscribe(() => {
-			this.setState({
-				widgets: this.props.store.getState().widgets
-			});
-		});
-	}
-
-	componentWillUnmount() {
-		this.unsubscribe();
-	}
-
-	render() {
-
-		return <WidgetTable widgets={this.state.widgets} />;
-
-	}
-
-}
+export const WidgetTableContainer =
+    connect(mapStateToProps, mapDispatchToProps)(WidgetTable);

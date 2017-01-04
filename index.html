@@ -3,7 +3,7 @@
 <html>
 
 	<head>
-		<title>Redux Prep</title>
+		<title>Intermediate Redux > React + Redux</title>
 		<link href="styles.css" rel="stylesheet">
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script>
@@ -13,11 +13,13 @@
 					'app': 'js',
 					'redux': 'npm/redux/dist/redux.min.js',
 					'react': 'npm/react/dist/react.min.js',
-					'react-dom': 'npm/react-dom/dist/react-dom.min.js'
+					'react-dom': 'npm/react-dom/dist/react-dom.min.js',
+                    'react-redux': 'npm/react-redux/dist/react-redux.min.js',
+                    'redux-thunk': 'npm/redux-thunk/dist/redux-thunk.min.js'
 				},
 				packages: { app: { main: './app.js', defaultExtension: 'js' } }
 			});
-      System.import('app').catch((err) => console.error(err));
+      System.import('app').catch(console.error);
     </script>
 	</head>
 

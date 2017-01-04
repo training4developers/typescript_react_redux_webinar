@@ -1,11 +1,9 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 
-import { WidgetTableContainer } from './components/widget-table-container';
-import { appStore } from './app-store';
-import { refreshWidgets } from './actions/refresh-widgets';
+import {appStore} from "./app-store";
+import {WidgetTableContainer} from "./components/widget-table-container";
 
+ReactDOM.render(<WidgetTableContainer
+    store={appStore}/>, document.querySelector("main"));
 
-ReactDOM.render(<WidgetTableContainer store={appStore} />, document.querySelector('main'));
-
-refreshWidgets();

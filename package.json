@@ -25,6 +25,7 @@
     "browser-sync": "^2.16.0",
     "concurrently": "^3.1.0",
     "json-server": "^0.9.4",
+    "tslint": "^4.2.0",
     "typescript": "^2.0.3",
     "typings": "^2.1.0"
   },
