@@ -7,7 +7,7 @@ interface WidgetTableProps {
     refreshWidgets: Function;
 }
 
-export class WidgetTable extends React.Component<WidgetTableProps, {}> {
+export class WidgetTable extends React.PureComponent<WidgetTableProps> {
 
     public static propTypes = {
         refreshWidgets: React.PropTypes.func.isRequired,
@@ -18,10 +18,6 @@ export class WidgetTable extends React.Component<WidgetTableProps, {}> {
     public static defaultProps = {
         widgets: [],
     };
-
-    public componentDidMount() {
-        this.props.refreshWidgets();
-    }
 
     public render() {
         return <table>
@@ -44,4 +40,7 @@ export class WidgetTable extends React.Component<WidgetTableProps, {}> {
         </table>;
     }
 
+    private componentDidMount() {
+        this.props.refreshWidgets();
+    }
 }
