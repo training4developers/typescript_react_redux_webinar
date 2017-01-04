@@ -1,0 +1,37 @@
+{
+  "name": "intermediate-react-redux",
+  "version": "1.0.0",
+  "description": "A TypeScript starter project for Redux applications using React-Redux.",
+  "scripts": {
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run web\" \"npm run rest\" ",
+    "web": "browser-sync start --server --files \"index.html\" \"styles.css\" \"js\" --no-inject-changes",
+    "postinstall": "typings install",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings",
+    "rest": "json-server --watch --port 3010 db.json"
+  },
+  "keywords": [
+    "redux",
+    "react",
+    "typescript",
+    "react-redux",
+    "thunk",
+    "middleware"
+  ],
+  "author": "Eric W. Greene",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.16.0",
+    "concurrently": "^3.1.0",
+    "json-server": "^0.9.4",
+    "typescript": "^2.0.3",
+    "typings": "^2.1.0"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "redux": "^3.6.0",
+    "systemjs": "^0.19.38"
+  }
+}

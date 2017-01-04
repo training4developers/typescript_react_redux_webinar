@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"target": "es6", // output version
+		"module": "umd", // works with system, and other module systems
+		"moduleResolution": "node", // newer mechanism for finding modules, do not use classic
+		"sourceMap": true, // output source maps
+		"experimentalDecorators": true, // enable es7 decorators
+		"emitDecoratorMetadata": true, // output design time metadata for decorated declarations
+		"removeComments": false, // do not remove comments
+		"noImplicitAny": false, // raise errors for implicit any,
+		"jsx": "react" // enable JSX support for React
+	}
+}

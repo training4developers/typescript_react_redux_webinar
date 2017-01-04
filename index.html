@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>Redux Prep</title>
+		<link href="styles.css" rel="stylesheet">
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script>
+			System.config({
+				paths: { 'npm': 'node_modules/' },
+				map: {
+					'app': 'js',
+					'redux': 'npm/redux/dist/redux.min.js',
+					'react': 'npm/react/dist/react.min.js',
+					'react-dom': 'npm/react-dom/dist/react-dom.min.js'
+				},
+				packages: { app: { main: './app.js', defaultExtension: 'js' } }
+			});
+      System.import('app').catch((err) => console.error(err));
+    </script>
+	</head>
+
+	<body>
+		<h1>Redux/React Starter Project Setup Confirmation</h1>
+		<p>A table of 4 widgets should be displayed below. If not, check the browser console.</p>
+		<main></main>
+	</body>
+
+</html>

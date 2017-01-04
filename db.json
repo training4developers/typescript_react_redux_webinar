@@ -1,0 +1,9 @@
+{
+	"widgets": [
+		{ "id": 1, "name": "Red Small Widget", "description": "A red, small widget.", "color": "red", "size": "small", "quantity": 2 },
+		{ "id": 2, "name": "Blue Medium Widget", "description": "A blue, medium widget.", "color": "blue", "size": "medium", "quantity": 5 },
+		{ "id": 3, "name": "Orange Large Widget", "description": "A orange, large widget.", "color": "orange", "size": "large", "quantity": 10 },
+		{ "id": 4, "name": "Green Small Widget", "description": "A green, small widget.", "color": "green", "size": "small", "quantity": 7 }
+	],
+	"profile": { "name": "t4d" }
+}

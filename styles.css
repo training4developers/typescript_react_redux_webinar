@@ -1,0 +1,33 @@
+body {
+	margin:0;
+	padding:0;
+	font-size:100%;
+	font-family:arial;
+}
+
+table {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+td {
+	border-top: 1px solid black;
+}
+
+th, td {
+	text-align:center;
+	padding:4px;
+}
+
+th {
+	font-weight:bold;
+	min-width:100px;
+}
+
+td:first-child {
+	text-align:left;
+}
+
+tbody > tr:nth-child(2n) > td {
+	background-color: lightgray;
+}
