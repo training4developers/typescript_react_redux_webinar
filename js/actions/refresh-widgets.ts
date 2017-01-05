@@ -1,15 +1,25 @@
+import { Action } from "redux";
+
 import {actionTypes} from "../action-types";
 import {Widget} from "../models/widget";
 
-const createRefreshWidgetsRequestAction = () => ({
+declare var fetch;
+
+export interface WidgetAction extends Action {
+	widgets: Widget[];
+}
+
+const createRefreshWidgetsRequestAction: () => WidgetAction =
+	() => ({
     type: actionTypes.REFRESH_WIDGETS_REQUEST,
     widgets: [],
-});
+	});
 
-const createRefreshWidgetsDoneAction = widgets => ({
-        type: actionTypes.REFRESH_WIDGETS_DONE,
-        widgets,
-    });
+const createRefreshWidgetsDoneAction: (widget: Widget[]) => WidgetAction =
+	(widgets: Widget[]) => ({
+			type: actionTypes.REFRESH_WIDGETS_DONE,
+			widgets,
+	});
 
 export const refreshWidgets = () => {
 
@@ -22,7 +32,8 @@ export const refreshWidgets = () => {
         return fetch("http://localhost:3010/widgets")
             .then(res => res.json())
             .then(widgets => {
-                dispatch(createRefreshWidgetsDoneAction(widgets.map(w => {
+
+								const widgetModels = widgets.map(w => {
                     const widget = new Widget();
                     widget.id = w.id;
                     widget.name = w.name;
@@ -31,7 +42,11 @@ export const refreshWidgets = () => {
                     widget.size = w.size;
                     widget.quantity = w.quantity;
                     return widget;
-                })));
+                });
+
+                dispatch(createRefreshWidgetsDoneAction(widgetModels));
+
+								return widgetModels;
             });
     };
 

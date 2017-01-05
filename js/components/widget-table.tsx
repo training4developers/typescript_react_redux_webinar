@@ -2,22 +2,24 @@ import * as React from "react";
 
 import {Widget} from "../models/widget";
 
-export class WidgetTable extends React.Component {
+interface WidgetTableProps {
+	refreshWidgets: () => Promise<Widget[]>;
+	widgets: Widget[];
+}
 
-    static get propTypes() {
+export class WidgetTable extends React.Component<WidgetTableProps, void> {
 
-        return {
-            refreshWidgets: React.PropTypes.func.isRequired,
-            widgets: React.PropTypes.arrayOf(
-                React.PropTypes.instanceOf((Widget))).isRequired,
-        };
-    }
+    public static propTypes = {
+			refreshWidgets: React.PropTypes.func.isRequired,
+			widgets: React.PropTypes.arrayOf(
+					React.PropTypes.instanceOf((Widget))).isRequired,
+    };
 
-    static get defaultProps() {
-        return { widgets: [] };
-    }
+    public static defaultProps = {
+      widgets: [],
+    };
 
-    render() {
+    public render() {
         return <table>
             <thead>
             <tr>
@@ -38,7 +40,9 @@ export class WidgetTable extends React.Component {
         </table>;
     }
 
-    componentDidMount() {
-        this.props.refreshWidgets();
+    private componentDidMount() {
+        this.props.refreshWidgets().then(widgets => {
+					console.log(widgets);	
+				});
     }
 }
