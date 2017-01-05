@@ -1,7 +1,4 @@
-import {Action, Reducer} from "redux";
-
 import {actionTypes} from "../action-types";
-import {WidgetAction} from "../actions/refresh-widgets";
 
 export const widgetReducer = (state = {widgets: []}, action) => {
 

@@ -1,4 +1,4 @@
-# Redux/React Starter Project
+# TypeScript Starter Project for Redux & React
 
 ## Getting Started
 
