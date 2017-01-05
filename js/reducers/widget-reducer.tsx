@@ -2,9 +2,8 @@ import {Action, Reducer} from "redux";
 
 import {actionTypes} from "../action-types";
 import {WidgetAction} from "../actions/refresh-widgets";
-import {AppState} from "../app-state";
 
-export const widgetReducer: Reducer<AppState> = (state: AppState = {widgets: []}, action: WidgetAction) => {
+export const widgetReducer = (state = {widgets: []}, action) => {
 
     switch (action.type) {
         case actionTypes.REFRESH_WIDGETS_REQUEST:

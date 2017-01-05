@@ -1,21 +1,12 @@
-import { Action } from "redux";
-
-import { actionTypes } from "../action-types";
+import {actionTypes} from "../action-types";
 import {Widget} from "../models/widget";
 
-declare var fetch;
-
-export interface WidgetAction extends Action {
-    widgets: Widget[];
-}
-
-const createRefreshWidgetsRequestAction: () => WidgetAction = () => ({
+const createRefreshWidgetsRequestAction = () => ({
     type: actionTypes.REFRESH_WIDGETS_REQUEST,
     widgets: [],
 });
 
-const createRefreshWidgetsDoneAction: (widgets: Widget[]) =>
-    WidgetAction = widgets => ({
+const createRefreshWidgetsDoneAction = widgets => ({
         type: actionTypes.REFRESH_WIDGETS_DONE,
         widgets,
     });
