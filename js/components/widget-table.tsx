@@ -2,7 +2,7 @@ import * as React from "react";
 
 import {Widget} from "../models/widget";
 
-export class WidgetTable extends React.PureComponent {
+export class WidgetTable extends React.Component {
 
     static get propTypes() {
 

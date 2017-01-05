@@ -3,10 +3,9 @@ import {connect} from "react-redux";
 import {bindActionCreators} from "redux";
 
 import {refreshWidgets} from "../actions/refresh-widgets";
-import {AppState} from "../app-state";
 import {WidgetTable} from "../components/widget-table";
 
-const mapStateToProps = (state: AppState) => ({
+const mapStateToProps = state => ({
     widgets: state.widgets,
 });
 
