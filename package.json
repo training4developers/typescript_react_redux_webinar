@@ -1,7 +1,7 @@
 {
-  "name": "intermediate-react-redux",
+  "name": "typescript_react_redux_webinar",
   "version": "1.0.0",
-  "description": "A TypeScript starter project for Redux applications using React-Redux.",
+  "description": "A TypeScript starter project for React and Redux applications.",
   "scripts": {
     "start": "tsc && concurrently \"npm run tsc:w\" \"npm run web\" \"npm run rest\" ",
     "web": "browser-sync start --server --files \"index.html\" \"styles.css\" \"js\" --no-inject-changes",
